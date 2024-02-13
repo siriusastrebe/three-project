@@ -34,11 +34,13 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, './src'),
+      serveIndex: true,
     },
     open: ['/'],
     compress: true,
     port: 3000,
+    hot: true,
     proxy: {
       '/socket.io': {
         target: 'http://localhost:9000',  // Replace with the actual URL of your Socket.IO server
