@@ -1,9 +1,11 @@
 const express = require('express');
 const jsynchronous = require('jsynchronous');
 const { Server } = require("socket.io");
+const compression = require('compression');
 
 const app = express();
 const port = 9000;
+app.use(compression());
 
 // Jsynchronous
 jsynchronous.send = (websocket, data) => {
